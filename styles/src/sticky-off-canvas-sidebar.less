@@ -1,0 +1,83 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900');
+
+// VARIABLES
+//
+//
+//
+@sidebar-width: 320px;
+@sidebar-bground: #303030;
+@sidebar-color: #fff;
+@transition: all 0.6s;
+
+html,
+body {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Lato', sans-serif;
+    background-color: #f2f2f2;
+    overflow-x: hidden;
+}
+
+#page {
+    width: 100%;
+    display: flex;
+
+    #sidebar {
+        top: 0;
+        left: 0;
+        position: relative;
+        min-width: @sidebar-width;
+        max-width: @sidebar-width;
+        background-color: @sidebar-bground;
+        color: @sidebar-color;
+        transition: @transition;
+        min-height: 100vh;
+
+        #sidebar-header {
+            // customize it!
+        }
+
+        #sidebar-main {
+            margin: 10px;
+            padding: 20px;
+        }
+
+        #sidebar-footer {
+            // customize it
+        }
+    }
+
+    #content {
+        width: 100%;
+        transition: @transition;
+
+        #content-header {
+            // customize it!
+        }
+
+        #content-main {
+            margin: 10px;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        #content-footer {
+            // customize it!
+        }
+    }
+}
+
+#sidebar.active {
+    margin-left: -@sidebar-width;
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -@sidebar-width;
+    }
+
+    #sidebar.active {
+        margin-left: 0;
+    }
+}
