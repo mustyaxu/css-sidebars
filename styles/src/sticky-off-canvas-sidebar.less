@@ -68,8 +68,10 @@ body {
     }
 }
 
-#sidebar.active {
-    margin-left: -@sidebar-width;
+#sidebar {
+    &.active {
+        margin-left: -@sidebar-width;
+    }
 }
 
 @media (max-width: 768px) {
@@ -77,7 +79,9 @@ body {
         margin-left: -@sidebar-width;
     }
 
-    #sidebar.active {
-        margin-left: 0;
+    #sidebar {
+        &.active {
+            margin-left: 0;
+        }
     }
 }
